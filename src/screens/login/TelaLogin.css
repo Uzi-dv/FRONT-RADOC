@@ -1,0 +1,695 @@
+/* CSS base */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden; /* Impede a barra de rolagem horizontal e vertical */
+    background-color: #fff;
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+  }
+  
+  .barra,
+  .barra2,
+  .barra4 {
+    background-color: #2C89A0; /* Cor de fundo original */
+    width: 100%;
+  }
+  
+  .barra {
+    height: 60px; /* Ajustado a altura da barra */
+  }
+  
+  .barra2 {
+    height: 200px; /* Ajustado a altura da barra 2 */
+    flex-shrink: 0;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .barra4 {
+    height: 200px; /* Ajustado a altura da barra 4 */
+    flex-shrink: 0;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+  }
+  
+  .cabecalho {
+    background-color: #ffff; /* Cor de fundo original */
+    height: 100px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+  }
+  
+  .conteudo {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo {
+    width: 90px;
+    height: 50px;
+    flex-shrink: 0;
+    margin-bottom: 15px;
+    margin-left: 120px;
+    margin-right: 50px;
+  }
+  
+  .barra-svg {
+    width: 50px;
+    height: 30px;
+  }
+  .barra-vertical {
+    display: inline-block;
+    width: 4px ;
+    min-width: 4px; /* Largura da barra */
+    border-radius: 70px;
+    height: 30px; /* Altura da barra */
+    background-color: #000; /* Cor da barra */
+    margin: 0 10px; /* Espaçamento ao redor da barra */
+    vertical-align: middle; /* Alinhamento vertical */
+  }
+  
+  .frase,
+  .radoc {
+    color: #0B1728;
+    text-align: center;
+    font-family: "Leelawadee UI";
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin: 0 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  
+  /* Estilos da tela de login */
+  .tela-login {
+    position: fixed;
+    top: 50%;
+    left: 50%;  
+    transform: translate(-50%, -50%);
+    width: 450px; /* Largura fixa do formulário */
+    height: 62%; /* Altura fixa do formulário */
+    overflow-y: auto;
+    background-color: #FFF;
+    border: 1px solid #000;
+    border-radius: 20px;
+    margin-top: 30px;
+    padding: 20px;
+    box-sizing: border-box;
+    z-index: 9999; /* Z-index alto para colocar o formulário sobreposto a todos os elementos */
+  }
+  
+  .tela-login h2 {
+    margin-bottom: 60px;
+    color: #0B1728;
+    font-family: "Leelawadee UI";
+    font-size: 1.5REM;
+    font-weight: 400;
+    
+    text-align: center;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+    color: #000;
+    font-family: "Leelawadee UI";
+    font-size: 24px;
+    font-weight: 400;
+  }
+  
+  .form-group label {
+    display: block;
+  }
+  
+  input {
+    border: none; /* Remove todas as bordas */
+    border-bottom: 1px solid black; /* Adiciona apenas uma borda inferior */
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-top: 5px;
+    box-sizing: border-box;
+    font-size: 0.8rem;
+  }
+  .error {
+      color: red;
+      text-align: center;
+      display: block;
+      margin-block-start: 1em;
+      margin-block-end: 1em;
+      margin-inline-start: 0px;
+      margin-inline-end: 0px;
+  
+  }
+  
+  .ou-container {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .barra-horizontal {
+    flex: 1;
+    height: 1px;
+    background-color:#dbdbdb; /* Cor da barra horizontal */
+  }
+  
+  .ou-text {
+    margin: 0 10px; /* Espaçamento entre o texto "ou" e as barras horizontais */
+    font-size: 16px; /* Ajuste conforme necessário */
+    color: #dbdbdb; /* Cor do texto "ou" */
+  }
+  
+  .google-login-button {
+    padding: 5px 10px; /* Ajuste o padding conforme necessário */
+    font-size: 1rem;
+    background-color: #fff; /* Altera o background para branco */
+    color: #333; /* Altera a cor do texto para preto com um tom de cinza */
+    border: 1px solid #ccc; /* Adiciona uma borda fina cinza ao redor do botão */
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 1rem auto; /* Espaçamento superior e inferior de 1rem e alinhamento horizontal automático */
+    display: flex; /* Para alinhar os itens verticalmente */
+    align-items: center; /* Para alinhar os itens verticalmente */
+  }
+  
+  .google-login-button:hover {
+    background-color: #f2f2f2; /* Altera a cor do background no hover */
+  }
+  
+  .google-login-button img {
+    margin-right: 10px; /* Adiciona espaço entre o ícone e o texto */
+    height: 30px;
+    width: 30px;
+  }
+  
+  .button {
+    width: 129.67px;
+    height: 28.937px;
+    display: flex;
+    top: 120px;
+    margin: 0% auto;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(90deg, #2C89A0 77.69%, #000 130.45%);
+    color: #FFF;
+    font-size: 20px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    margin-top: 38px;
+  }
+  /* App.css */
+  
+  /* Estilos para o botão "Login com Google" */
+  
+  
+  button:hover {
+    background-color: #2C89A0;
+    opacity: 0.8; /* Define a opacidade do botão ao passar o mouse sobre ele */
+  }
+  
+  .esqueceu-senha {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    left: 0; /* Alinhar com a borda esquerda do formulário */
+    width: 100%; /* Ocupar a largura total do formulário */
+    text-align: center; /* Centralizar o texto */
+  }
+  
+  /* Breakpoints responsividade para telas entre 575 à 376 px */
+  @media (max-width: 575.98px) and (min-width: 376px) {
+    html {
+      overflow-x: hidden;
+    }
+    .tela-login {
+      position: fixed;
+      top: 53%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 292px;
+      height: 50%;
+      overflow-y: auto;
+      background-color: #FFF;
+      border: 1px solid #000;
+      border-radius: 20px;
+      margin-top: 40px;
+      padding: 20px;
+      box-sizing: border-box;
+      z-index: 9999;
+  }
+  
+  .barra2, .barra4 {
+    height: 214px;
+  }
+  
+  .barra{
+    height: 65px;
+  
+  }
+  .cabecalho {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centralizar verticalmente */
+    justify-content: center; /* Centralizar horizontalmente */
+  }
+  .tela-login h2 {
+    margin-bottom: 26px;
+    color: #0B1728;
+    font-family: "Leelawadee UI";
+    font-size: 1REM;
+    font-weight: 400;
+    text-align: center;
+  }
+  .form-group
+  {
+    color: #000;
+    font-family: "Leelawadee UI";
+    font-size: 1rem;
+    font-weight: 400;
+  }
+  
+  /* Estilos da logo */
+  .logo {
+    margin-bottom: 20px;
+    margin-left:30px ;
+  } 
+  /* Esconder outros elementos do cabeçalho */
+  
+      html {
+        overflow-x: hidden;
+      }
+      
+      /* Esconder a frase */
+      .frase {
+        display: none;
+      }
+      .barra-vertical:first-of-type {
+        display: none;
+      }
+      input {
+        border: none;
+        border-bottom: 1px solid black;
+        width: calc(100% - 20px);
+        padding: 10px;
+        margin-top: 0px;
+        box-sizing: border-box;
+        font-size: 0.9rem;
+    }
+    .google-login-button {
+      padding: 0px 5px;
+      font-size: 0.8rem;
+      background-color: #fff;
+      color: #333;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      cursor: pointer;
+      margin: 1rem auto;
+      display: flex;
+      align-items: center;
+  }
+     .button {
+      margin-top: 0.5rem;
+      font-size: 0.9rem;
+      width: 6rem;
+      height: 1.5rem;
+    }
+  
+    .tela-login .esqueceu-senha {
+      font-size: 0.8rem;
+      padding-bottom: 10px;
+  }
+  }
+  
+  /* Estilos para telas com larguras entre 376 à 32px */
+  @media (max-width: 376px) and (min-width: 321px) {
+    
+    html {
+      overflow-x: hidden;
+    }
+    .tela-login {
+      position: fixed;
+      top: 53%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 292px;
+      height: 65%;
+      overflow-y: auto;
+      background-color: #FFF;
+      border: 1px solid #000;
+      border-radius: 20px;
+      margin-top: 60px;
+      padding: 20px;
+      box-sizing: border-box;
+      z-index: 9999;
+  }
+  
+  .barra2,
+  .barra4 {
+    height: 100px;
+  }
+  .barra{
+    height: 65px;
+  
+  }
+  .cabecalho {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centralizar verticalmente */
+    justify-content: center; /* Centralizar horizontalmente */
+  }
+  .tela-login h2 {
+    margin-bottom: 26px;
+    color: #0B1728;
+    font-family: "Leelawadee UI";
+    font-size: 1REM;
+    font-weight: 400;
+    text-align: center;
+  }
+  .form-group
+  {
+    color: #000;
+    font-family: "Leelawadee UI";
+    font-size: 1rem;
+    font-weight: 400;
+  }
+  
+  /* Estilos da logo */
+  .logo {
+    margin-bottom: 20px;
+    margin-left:30px ;
+  } 
+  /* Esconder outros elementos do cabeçalho */
+  
+      html {
+        overflow-x: hidden;
+      }
+      
+      /* Esconder a frase */
+      .frase {
+        display: none;
+      }
+      .barra-vertical:first-of-type {
+        display: none;
+      }
+      input {
+        border: none;
+        border-bottom: 1px solid black;
+        width: calc(100% - 20px);
+        padding: 10px;
+        margin-top: 0px;
+        box-sizing: border-box;
+        font-size: 0.9rem;
+    }
+    .google-login-button {
+      padding: 0px 5px;
+      font-size: 0.8rem;
+      background-color: #fff;
+      color: #333;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      cursor: pointer;
+      margin: 1rem auto;
+      display: flex;
+      align-items: center;
+  }
+     .button {
+      margin-top: 0.5rem;
+      font-size: 0.9rem;
+      width: 6rem;
+      height: 1.5rem;
+      margin-bottom: 40px;
+    }
+  
+  
+    .tela-login .esqueceu-senha {
+      font-size: 0.8rem;
+      margin-bottom: 0;
+  }
+  .ou-container {
+    margin-top: 0;
+  }
+   
+  }
+  /* Responsividade para telas de até 320px */
+  @media (max-width: 320px) {
+   html {
+      overflow-x:scroll;
+    }
+    .tela-login {
+      position: fixed;
+      top: 53%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 292px;
+      height: 74%;
+      overflow-y: auto;
+      background-color: #FFF;
+      border: 1px solid #000;
+      border-radius: 20px;
+      margin-top: 55px;
+      padding: 20px;
+      box-sizing: border-box;
+      z-index: 9999;
+  }
+  
+  .barra2,
+  .barra4 {
+  
+    height: 100px; 
+  }
+  .barra{
+    height: 30px;
+  }
+  
+  .cabecalho {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centralizar verticalmente */
+    justify-content: center; /* Centralizar horizontalmente */
+  }
+  .tela-login h2 {
+    margin-bottom: 26px;
+    color: #0B1728;
+    font-family: "Leelawadee UI";
+    font-size: 1REM;
+    font-weight: 400;
+    text-align: center;
+  }
+  .form-group
+  {
+    color: #000;
+    font-family: "Leelawadee UI";
+    font-size: 1rem;
+    font-weight: 400;
+  }
+  
+  /* Estilos da logo */
+  .logo {
+    margin-bottom: 20px;
+    margin-left:30px ;
+  } 
+  
+  /* Esconder outros elementos do cabeçalho */
+      html {
+        overflow-x: hidden;
+      }
+      
+      /* Esconder a frase */
+      .frase {
+        display: none;
+      }
+      .barra-vertical:first-of-type {
+        display: none;
+      }
+      /* input Login */
+      input {
+        border: none;
+        border-bottom: 1px solid black;
+        width: calc(100% - 20px);
+        padding: 10px;
+        margin-top: 0px;
+        box-sizing: border-box;
+        font-size: 0.9rem;
+    }
+    /* botao google */
+    .google-login-button {
+      padding: 0px 5px;
+      font-size: 0.8rem;
+      background-color: #fff;
+      color: #333;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      cursor: pointer;
+      margin: 1rem auto;
+      display: flex;
+      align-items: center;
+  }
+  /* botão entrar / submit*/
+     .button {
+      margin-top: 0.5rem;
+      font-size: 0.9rem;
+      width: 6rem;
+      height: 1.5rem;
+      margin-bottom: 10px;
+    }
+    /* esqueceu sua senha */
+    .tela-login .esqueceu-senha {
+      font-size: 0.8rem;
+     margin-bottom: 20px; 
+  }
+  }
+  
+  
+  @media (min-width: 768px) and (max-width: 991px) {
+    /* Estilos para telas com largura igual ou superior a 768px */
+  .tela-login{
+    margin-top: 61px;
+    height: 70%;
+  }
+  .barra2, .barra4{
+      height: 260px;
+  
+  }
+  .tela-login h2 {
+    font-size: 1.5rem;
+  }
+  .form-group {
+    font-size: 1.4rem;
+  }
+  input {
+    font-size: 1.2rem;
+  }
+  .button {
+     width: 140.67px;
+      height: 35.937px;
+      margin-bottom: 20px;
+  }
+  .ou-text {
+    font-size: 22px;
+    
+  
+  .google-login-button {
+    padding: 5px 10px;
+    font-size: 1.4rem;
+  }
+  .ou-container{ 
+    margin-top: 20px;
+  }
+  .esqueceu-senha {
+    font-size: 1.3rem;
+  
+    left: 0;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  }
+  
+  @media (min-width: 992px) and (max-width: 1199px){
+    /* Estilos para telas com largura igual ou superior a 992px */
+    .tela-login {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 428px;
+      height: 72%;
+      overflow-y: auto;
+      background-color: #FFF;
+      border: 1px solid #000;
+      border-radius: 20px;
+      margin-top: 67px;
+      padding: 20px;
+      box-sizing: border-box;
+      z-index: 9999;
+  }
+  input {
+    font-size: 0.9rem;
+  }
+  .esqueceu-senha {
+    font-size: 1.1rem;    
+    left: 50%; /* Alinhar com o centro do container */
+    
+    width: 100%; /* Ocupar a largura total do container */
+    text-align: center; /* Centralizar o texto */
+    margin-bottom: 20px;
+  }
+  }
+  
+  @media (min-width: 1200px) and (max-width: 1599px) {
+   
+    /* Estilos para telas com largura igual ou superior a 1200px */
+    .tela-login {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 428px;
+      height: 64%;
+      overflow-y: auto;
+      background-color: #FFF;
+      border: 1px solid #000;
+      border-radius: 20px;
+      margin-top: 43px;
+      padding: 20px;
+      box-sizing: border-box;
+      z-index: 9999;
+  }
+  
+  .ou-container {
+    display: flex;
+    align-items: center;
+    
+    
+  }
+  .esqueceu-senha{
+    margin-bottom: 20px;
+  }
+  }
+  
+  
+  @media (min-width: 1600px){
+    .tela-login {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 428px;
+      height: 60%;
+      overflow-y: auto;
+      background-color: #FFF;
+      border: 1px solid #000;
+      border-radius: 20px;
+      margin-top: 63px;
+      padding: 20px;
+      box-sizing: border-box;
+      z-index: 9999;
+  }
+    .form-group {
+      margin-bottom: 20px;
+      color: #000;
+      font-family: "Leelawadee UI";
+      font-size: 24px;
+      font-weight: 400;
+  
+  }
+  .ou-container {
+      
+      display: flex;
+      align-items: center;
+      margin-top: 40px;
+      margin-bottom: 40px;
+  }
+  
+  }
+}
