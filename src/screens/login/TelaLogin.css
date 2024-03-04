@@ -169,18 +169,13 @@ html, body {
     color: #dbdbdb; /* Cor do texto "ou" */
   }
   
-  .google-login-button {
-    padding: 5px 10px; /* Ajuste o padding conforme necessário */
-    font-size: 1rem;
-    background-color: #fff; /* Altera o background para branco */
-    color: #333; /* Altera a cor do texto para preto com um tom de cinza */
-    border: 1px solid #ccc; /* Adiciona uma borda fina cinza ao redor do botão */
-    border-radius: 4px;
-    cursor: pointer;
-    margin: 1rem auto; /* Espaçamento superior e inferior de 1rem e alinhamento horizontal automático */
-    display: flex; /* Para alinhar os itens verticalmente */
-    align-items: center; /* Para alinhar os itens verticalmente */
+  
+  .google-login-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem; /* Ajuste conforme necessário */
   }
+  
   
   .google-login-button:hover {
     background-color: #f2f2f2; /* Altera a cor do background no hover */
