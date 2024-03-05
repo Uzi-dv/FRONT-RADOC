@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import GoogleLogin from 'react-google-login';
 import './TelaLogin.css'; // Importe os estilos específicos da tela de login
 import ufraLogo from './ufra.svg'; // Suponho que o ufraLogo seja necessário, então mantive a importação
 
@@ -30,11 +31,21 @@ function TelaLogin() {
     }
   };
 
-  const handleGoogleLogin = () => {
-    alert('Simulando login com Google');
+  const handleGoogleLoginSuccess = (googleUser) => {
+    const profile = googleUser.getBasicProfile();
+    console.log('ID do Google:', profile.getId());
+    console.log('Nome:', profile.getName());
+    console.log('Email:', profile.getEmail());
+    // Execute qualquer ação adicional que você precisa após o login bem-sucedido com o Google
+  };
+
+  const handleGoogleLoginFailure = (error) => {
+    console.error('Erro ao fazer login com o Google:', error);
+    // Lidar com falha de login do Google
   };
 
   return (
+    
     <div className="container">
       <div className="barra"></div>
       <header className="cabecalho">
@@ -71,16 +82,23 @@ function TelaLogin() {
             <div className="ou-text">ou</div>
             <div className="barra-horizontal"></div>
           </div>
-          <button type="button" onClick={handleGoogleLogin} className="google-login-button">
-            <img src="https://www.imagensempng.com.br/wp-content/uploads/2023/05/278-4.png" alt="Logo do Google" className="google-logo" />
-            Login com Google
-          </button>
+          
+          <div className="google-login-container">
+            <GoogleLogin
+              clientId="275154252567-s9rmdb2ob12vrtbsib6igv467rissge9.apps.googleusercontent.com"
+              buttonText="Continuar com Google"
+              onSuccess={handleGoogleLoginSuccess}
+              onFailure={handleGoogleLoginFailure}
+              cookiePolicy={'single_host_origin'}
+              
+            />
+          </div>
         </form>
-	{/* Terceira barra */}
-      <div className="barra3"></div>
-      </div>
-	{/* Quarta barra */}
-      <div className="barra4"></div>
+	          {/* Terceira barra */}
+            <div className="barra3"></div>
+        </div>
+	            {/* Quarta barra */}
+            <div className="barra4"></div>
     </div>
   );
 }
