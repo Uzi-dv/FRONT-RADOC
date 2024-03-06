@@ -104,19 +104,20 @@ html, body {
 .tela-login {
   position: fixed;
   top: 50%;
-  left: 50%;  
+  left: 50%;
   transform: translate(-50%, -50%);
-  width: 450px; /* Largura fixa do formulário */
-  height: 62%; /* Altura fixa do formulário */
+  width: 450px;
+  height: 67%;
   overflow-y: auto;
   background-color: #FFF;
   border: 1px solid #000;
   border-radius: 20px;
-  margin-top: 30px;
+  margin-top: 61px;
   padding: 20px;
   box-sizing: border-box;
-  z-index: 9999; /* Z-index alto para colocar o formulário sobreposto a todos os elementos */
+  z-index: 9999;
 }
+
 
 .tela-login h2 {
   margin-bottom: 60px;
@@ -124,7 +125,6 @@ html, body {
   font-family: "Leelawadee UI";
   font-size: 1.5REM;
   font-weight: 400;
-  
   text-align: center;
 }
 
@@ -132,7 +132,7 @@ html, body {
   margin-bottom: 20px;
   color: #000;
   font-family: "Leelawadee UI";
-  font-size: 24px;
+  font-size: 1.4rem;
   font-weight: 400;
 }
 
@@ -148,6 +148,7 @@ input {
   margin-top: 5px;
   box-sizing: border-box;
   font-size: 0.8rem;
+  margin-bottom: 10px;
 }
 .error {
     color: red;
@@ -185,15 +186,27 @@ input {
   margin-top: 1rem; /* Ajuste conforme necessário */
 }
 
+.google-login-button {
+  background-color: #fff; /* Cor de fundo branca */
+  border: 1px solid #ccc; /* Adiciona uma borda cinza */
+  border-radius: 5px; /* Borda arredondada */
+  padding: 10px 15px; /* Adiciona espaço interno */
+  transition: background-color 0.3s, border-color 0.3s; /* Adiciona uma transição suave */
+}
 
 .google-login-button:hover {
-  background-color: #f2f2f2; /* Altera a cor do background no hover */
+  background-color: #f2f2f2; /* Altera a cor de fundo no hover */
 }
 
 .google-login-button img {
   margin-right: 10px; /* Adiciona espaço entre o ícone e o texto */
   height: 30px;
   width: 30px;
+}
+
+.google-login-button span {
+  font-size: 14px; /* Tamanho da fonte do texto */
+  color: #555; /* Cor do texto */
 }
 
 .button {
@@ -210,7 +223,7 @@ input {
   border: none;
   border-radius: 50px;
   cursor: pointer;
-  margin-top: 38px;
+  margin-top: 20px;
   margin-bottom: 20px;
 }
 /* App.css */
@@ -226,10 +239,41 @@ button:hover {
 .esqueceu-senha {
   font-size: 1.1rem;
   margin-bottom: 20px;
-  left: 0; /* Alinhar com a borda esquerda do formulário */
-  width: 100%; /* Ocupar a largura total do formulário */
-  text-align: center; /* Centralizar o texto */
+  text-align: center; /* Centraliza o texto */
+  color: #2C89A0; /* Cor do texto */
+  font-size: 1rem;
+
 }
+
+.esqueceu-senha a {
+  color: inherit; /* Mantém a cor padrão do texto */
+  text-decoration: none; /* Remove sublinhado */
+}
+
+.esqueceu-senha a:hover {
+  text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
+}
+
+
+
+.nao-tem-conta {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.nao-tem-conta p {
+  font-size: 0.9rem;
+}
+
+.nao-tem-conta a {
+  color: #2C89A0;
+  text-decoration: none;
+}
+
+.nao-tem-conta a:hover {
+  text-decoration: underline;
+}
+
 
 /* Breakpoints responsividade para telas entre 575 à 376 px */
 @media (max-width: 575.98px) and (min-width: 376px) {

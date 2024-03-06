@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom'; // Adiciona esta linha para importar o Link
 import GoogleLogin from 'react-google-login';
 import './TelaLogin.css'; // Importe os estilos específicos da tela de login
 import ufraLogo from './ufra.svg'; // Suponho que o ufraLogo seja necessário, então mantive a importação
@@ -45,7 +46,7 @@ function TelaLogin() {
   };
 
   return (
-    
+
     <div className="container">
       <div className="barra"></div>
       <header className="cabecalho">
@@ -59,7 +60,7 @@ function TelaLogin() {
           <span className="radoc">RADOC</span>
         </div>
       </header>
-        {/* Segunda barra */}
+      {/* Segunda barra */}
       <div className="barra2"></div>
       <div className="tela-login">
         <form onSubmit={handleSubmit}>
@@ -67,22 +68,26 @@ function TelaLogin() {
           {error && <div className="error">{error}</div>}
           <div className="form-group">
             <label htmlFor="login">Login</label>
-            <input type="text" id="login" name="login" value={loginData.login} onChange={handleInputChange} placeholder="Digite seu login"/>
-          </div>  
+            <input type="text" id="login" name="login" value={loginData.login} onChange={handleInputChange} placeholder="Digite seu login" />
+          </div>
           <div className="form-group">
             <label htmlFor="senha">Senha</label>
             <input type="password" id="senha" name="senha" value={loginData.senha} onChange={handleInputChange} placeholder="Digite sua senha" />
           </div>
-          <button type="submit"className='button'>Entrar</button>
-          <div className="esqueceu-senha">
-            <a href="#">Esqueceu a senha?</a>
+          <button type="submit" className='button'>Entrar</button>
+          <div className="nao-tem-conta">
+            <p>Não tem uma conta? <Link to="/cadastro" className="criar-conta">Criar</Link></p>
           </div>
+          <div className="esqueceu-senha">
+            <a href="#" className="criar-conta">Esqueceu a senha?</a>
+          </div>
+
           <div className="ou-container">
             <div className="barra-horizontal"></div>
             <div className="ou-text">ou</div>
             <div className="barra-horizontal"></div>
           </div>
-          
+
           <div className="google-login-container">
             <GoogleLogin
               clientId="275154252567-s9rmdb2ob12vrtbsib6igv467rissge9.apps.googleusercontent.com"
@@ -90,15 +95,15 @@ function TelaLogin() {
               onSuccess={handleGoogleLoginSuccess}
               onFailure={handleGoogleLoginFailure}
               cookiePolicy={'single_host_origin'}
-              
+
             />
           </div>
         </form>
-	          {/* Terceira barra */}
-            <div className="barra3"></div>
-        </div>
-	            {/* Quarta barra */}
-            <div className="barra4"></div>
+        {/* Terceira barra */}
+        <div className="barra3"></div>
+      </div>
+      {/* Quarta barra */}
+      <div className="barra4"></div>
     </div>
   );
 }

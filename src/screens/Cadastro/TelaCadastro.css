@@ -1,149 +1,176 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap');
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* CSS base */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden; /* Impede a barra de rolagem horizontal e vertical */
+  background-color: #fff;
 }
-body {
-    font-family: 'Open Sans', sans-serif;
-}
+
 .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #ecf0f1;
-  }
-  
-  .content {
-    background-color: #fff;
-    border-radius: 15px;
-    width: 960px;
-    height: 50%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .first-column {
-    text-align: center;
-    width: 40%;
-    background-color: #fff; /* Alterada para a cor #38B7A0 */
-    color: #fff;
-    border-top-left-radius: 15px;
-    border-bottom-left-radius: 15px;
-    padding: 40px;
-    z-index: 10;
-  }
-  
-  .second-column {
-    width: 60%;
-    height: 100%;
-    padding: 40px;
-    background-color: #38B7A0;
-    border-top-right-radius: 15px;
-    border-bottom-right-radius: 15px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .title {
-    color: #38B7A0;
-    text-align: center;
-    font-family: Poppins;
-    font-size: 28px;
-    font-weight: bold;
-    text-transform: capitalize
+  display: flex;
+  flex-direction: column;
+}
+
+.barra,
+.barra2,
+.barra4 {
+  background-color: #2C89A0; /* Cor de fundo original */
+  width: 100%;
+}
+
+.barra {
+  background-color: #2C89A0; /* Cor de fundo original */
+  height: 60px; /* Ajustado a altura da barra */
+  position: fixed; /* Fixa a barra no topo da tela */
+  top: 0; /* Posição superior */
+}
+
+.barra2 {
+  height: 200px; /* Ajustado a altura da barra 2 */
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+  margin-bottom: 540px;
+}
+
+.barra4 {
+  height: 200px; /* Ajustado a altura da barra 4 */
+  flex-shrink: 0;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 0;
+}
+
+.cabecalho {
+  position: sticky;
+  top: 0; /* Posiciona o cabeçalho no topo da tela */
+  z-index: 10; /* Garante que o cabeçalho fique acima do .container */
+  background-color: #ffff; /* Cor de fundo original */
+  height: 100px;
+  width: 100%;
+  margin-top: 61px;
+}
+
+.conteudo {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 90px;
+  height: 50px;
+  flex-shrink: 0;
+  margin-bottom: 15px;
+  margin-left: 120px;
+  margin-right: 50px;
+}
+
+.barra-vertical {
+  display: inline-block;
+  width: 4px ;
+  min-width: 4px; /* Largura da barra */
+  border-radius: 70px;
+  height: 30px; /* Altura da barra */
+  background-color: #000; /* Cor da barra */
+  margin: 0 10px; /* Espaçamento ao redor da barra */
+  vertical-align: middle; /* Alinhamento vertical */
+}
+
+.frase,
+.radoc {
+  color: #0B1728;
+  text-align: center;
+  font-family: "Leelawadee UI";
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin: 0 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+/* Estilos da tela de cadastro */
+.tela-cadastro {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 450px;
+  height: 67%;
+  overflow-y: auto;
+  background-color: #FFF;
+  border: 1px solid #000;
+  border-radius: 20px;
+  margin-top: 61px;
+  padding: 20px;
+  box-sizing: border-box;
+  z-index: 9999;
     
+}
+.tela-cadastro h2 {
+  margin-bottom: 40px;
+  color: #0B1728;
+  font-family: "Leelawadee UI";
+  font-size: 1.5rem;
+  font-weight: 400;
+  text-align: center;
+}
+
+.label-input {
+  margin-bottom: 20px;
+  color: #000;
+  font-family: "Leelawadee UI";
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.label-input label {
+  display: block;
+}
+
+input {
+  border: none; /* Remove todas as bordas */
+  border-bottom: 1px solid black; /* Adiciona apenas uma borda inferior */
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin-top: 5px;
+  box-sizing: border-box;
+  font-size: 0.8rem;
+}
+
+.error {
+  color: red;
+  text-align: center;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
+
+.btnCriar {
+  width: 129.67px;
+  height: 28.937px;
+  display: block; /* Alterado para display block */
+  margin: auto; /* Adicionado para centralizar horizontalmente */
+  background-image: linear-gradient(90deg, #2C89A0 77.69%, #000 130.45%);
+  color: #FFF;
+  font-size: 18px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  margin-top: 38px;
+  margin-bottom: 20px;
+}
+
+
+
+/* Responsividade */
+@media (max-width: 576px) {
+  .tela-cadastro {
+    width: 80%;
+    height: 80%;
   }
-  .title2 {
-    color: #FFF;
-    text-align: center;
-    font-family: Poppins;
-    font-size: 28px;
-    font-style: normal;
-    font-weight: 900;
-    line-height: normal;
-  }
-  .description {
-    color: #FFF;
-    font-family: 'Open Sans', sans-serif;
-    text-align: center;
-    font-size: 16px;
-    font-weight: 300;
-    margin-top: 10px; /* Adicionando margem superior para separação */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .description span {
-    margin-top: 10px; /* Adicionando margem superior para separação */
-  }
-  
-  
-  .form {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .label-input {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-  }
-  
-  .label-input i {
-    margin-right: 10px;
-  }
-  
-  input[type="text"],
-  input[type="email"],
-  input[type="password"] {
-    height: 40px;
-    padding: 0 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
-  }
-  
-  .btn-primary {
-    background-color: #58af9b;
-    color: #fff;
-    border: none;
-    border-radius: 20px;
-    margin: 0% auto;
-    font-size: 18px;
-    font-weight: bold;
-    height: 35px;
-    width: 150px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  .btn2{
-    background-color: #38B7A0;
-    color: #fff;
-    border: 1px solid #FFF;
-    border-radius: 20px;
-    font-size: 18px;
-    font-weight: bold;
-    height: 35px;
-    width: 150px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    margin-top: 1rem;
-    
-    
-  }
-  .btn2:hover {
-    background-color: #fff;
-    color: #38B7A0;
-  }
-  
-  .btn-primary:hover {
-    background-color: #2ecc71;
-  }
-  
-  
+}
